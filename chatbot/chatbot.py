@@ -10,11 +10,11 @@ class ChatBot:
     def respond(self, query: str, debug: bool = False) -> str:
 
         retrieved = self.retrieval.retrieve(query)
-
+        #print(retrieved)
         prompt: str = (
             f"You are a helpful assistant.<｜User｜>{query}<｜Assistant｜>"
         )
-
+        print(retrieved)
         if retrieved:
             prompt = f"<system> Use this information: {retrieved}\n\n" + prompt
 
