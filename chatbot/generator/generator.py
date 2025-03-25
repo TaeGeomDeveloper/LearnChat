@@ -11,7 +11,7 @@ class Generator:
         )
 
     def generate(self, prompt: str) -> Iterator[str]:
-        stream = self.llm(prompt, max_tokens=80, stream=True)
+        stream = self.llm(prompt, max_tokens=None, stream=True)
 
     # 생성된 텍스트를 하나씩 반환합니다.
         for chunk in stream:
